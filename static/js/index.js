@@ -2,6 +2,7 @@
 created on Sat Jun 23 15:08:16 IST 2018
 Author: Prakhar Srivastava
 */
+let state={}
 const gebi=id=>document.getElementById(id)
 const gebcn=cn=>document.getElementsByClassName(cn)
 const set=(ns,f)=>{
@@ -31,6 +32,30 @@ const minimize=elem=>{
 const close=elem=>{
 	gebi('widgets').removeChild(elem.parentNode.parentNode.parentNode)
 }
+const showMenu=(s=true)=>{
+	console.log('showing menu: '+s)
+}
+const toggleMenu=ev=>{
+	let ctr=gebi('menu'),b_ctr=gebi('menubtnc'),upper=gebi('menu_upper'),lower=gebi('menu_lower'),main=gebi('widgets'),save_scroll=main.scrollTop
+	if(typeof state['toggleMenu_scrollSave'] === 'undefined')
+		state["toggleMenu_scrollSave"]=save_scroll
+	console.log(state['toggleMenu_scrollSave'])
+	if(!ctr.classList.contains('menu_rotated')){
+		showMenu()
+		main.style.transform="scale(0.25)translate(75%,-155%)"
+		main.scrollTo(0,-state.toggleMenu_scrollSave)
+	}
+	else{
+		showMenu(false)
+		main.style.transform=''
+		main.scrollTo(0,state.toggleMenu_scrollSave)
+	}
+	ctr.classList.toggle('menu_rotated')
+	b_ctr.classList.toggle('menubtnc_rotated')
+	upper.classList.toggle('menu_upper_rotated')
+	lower.classList.toggle('menu_lower_rotated')
+}
+gebi('menu').onclick=toggleMenu
 set(gebcn('red'),close)
 set(gebcn('yellow'),minimize)
 set(gebcn('green'),maximize)

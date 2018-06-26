@@ -38,6 +38,36 @@ body {
 	box-shadow: 0 0 10px 5px #0000005e, 0 0 20px 3px #0000008a;
 	filter: saturate(0%)contrast(200%);
 }
+.menucontainer{
+	width: 55px;
+	min-height: 20px;
+	margin: 0 1% 0 1%;
+	float: left;
+	transition: 0.45s ease;
+}
+#menu_upper,#menu_lower{
+	height: 5px;
+    width: 100%;
+    background: #fff;
+	margin: 0;
+	border-radius: 1px;
+	margin-bottom: 5px;
+	transition: 0.45s cubic-bezier(0.05, -0.54, 0.28, 1.47);
+}
+.menu_rotated{
+	transform: translateY(-34%)rotate(180deg);
+	padding-top: 20px;
+    padding-bottom: 4px;
+}
+.menubtnc_rotated{
+}
+.menu_upper_rotated{
+	margin-bottom: -4px;
+	transform: rotate(45deg);
+}
+.menu_lower_rotated{
+	transform: rotate(-45deg)translate(9px,-7px);
+}
 section.main{
 	display: block;
 	padding: 0;
@@ -49,7 +79,8 @@ section.main{
     align-items: flex-start;
     justify-items: flex-start;
     align-self: center;
-    justify-self: center;
+	justify-self: center;
+	transition: 0.45s ease;
 }
 .widget{
 	margin:1rem auto 1rem auto;
