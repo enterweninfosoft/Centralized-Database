@@ -10,10 +10,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9">
 	<link href="{{ url_for('static',filename='css/index.css') }}" type="text/css" rel="stylesheet">
 	<style>
-		body {
-			background-image: url("{{ url_for('static',filename='2048.jpg') }}")
+		.background{
+			background-image: url("{{ url_for('static',filename='2048.jpg') }}");
 		}
-
 		.logo {
 			background-image: url("{{ url_for('static',filename='logo_jw.jpg') }}");
 		}
@@ -22,6 +21,7 @@
 </head>
 
 <body>
+	<figure class="background" id="bg"></figure>
 	<header class="global-nav" id="hdr">
 		<div class="menucontainer" id="menu">
 			<div class="menu_btncontainer" id="menubtnc">
@@ -33,6 +33,7 @@
 		<div class="logo"></div>
 		<div class="usercreds" id="usr"></div>
 	</header>
+	<section class="menuSection" id="menusect"></section>
 	<section class="main" id="widgets">
 		<div class="widget">
 			<div class="widgethdr">

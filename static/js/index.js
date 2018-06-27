@@ -42,18 +42,22 @@ const toggleMenu=ev=>{
 	console.log(state['toggleMenu_scrollSave'])
 	if(!ctr.classList.contains('menu_rotated')){
 		showMenu()
-		main.style.transform="scale(0.25)translate(75%,-155%)"
-		main.scrollTo(0,-state.toggleMenu_scrollSave)
+		main.style.transform="scale(0.35)translate(75%,-100%)"
+		//main.style.border="6px dashed grey"
+		//main.scrollTo(0,-0.35*state.toggleMenu_scrollSave)
+		gebi('bg').style="filter: blur(21px)saturate(180%);"
 	}
 	else{
 		showMenu(false)
-		main.style.transform=''
+		main.style=''
 		main.scrollTo(0,state.toggleMenu_scrollSave)
+		gebi('bg').style=""
 	}
 	ctr.classList.toggle('menu_rotated')
 	b_ctr.classList.toggle('menubtnc_rotated')
 	upper.classList.toggle('menu_upper_rotated')
 	lower.classList.toggle('menu_lower_rotated')
+	gebi('menusect').classList.toggle('menuShow')
 }
 gebi('menu').onclick=toggleMenu
 set(gebcn('red'),close)
