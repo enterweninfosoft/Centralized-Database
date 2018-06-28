@@ -80,12 +80,10 @@ const toggleMenu=ev=>{
 	Cache.store({saveScroll:main.scrollTop})
 	if(!ctr.classList.contains('menu_rotated')){
 		showMenu()
-		gebi('bg').style="filter: blur(21px)saturate(180%);"
 	}
 	else{
 		showMenu(false)
 		main.scrollTo(0,Cache.get('saveScroll'))
-		gebi('bg').style=""
 	}
 	main.classList.toggle('withMenu')
 	ctr.classList.toggle('menu_rotated')
