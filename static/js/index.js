@@ -12,7 +12,6 @@ class Storage{
 			return
 		else
 			this.state={...this.state,...obj}
-		console.log(this.state)
 	}
 	store(obj){
 		for (const key in obj) {
@@ -20,7 +19,6 @@ class Storage{
 				this.state[key]=obj[key]
 			}
 		}
-		console.log(this.state)
 	}
 	remove(key){delete this.state[key]}
 	get(key){return this.state[key]}
@@ -54,23 +52,23 @@ const maximize=elem=>{
 }
 const minimize=elem=>{
 	let widget=elem.parentNode.parentNode.parentNode
-	widget.classList.toggle('minimizedWidget')
-	asyncWait(451).then(()=>{
-		gebi('minimized').appendChild(widget,true)
-		widget.style.position="initial"
-		widget.onclick=()=>{
-			console.log('Nigga executed')
-			widget.style.position=""
-			widget.classList.remove('minimizedWidget')
-			gebi('widgets').appendChild(widget)
-			widget.onclick=null
-		}
-	})
+	if(!widget.classList.contains('maximizedWidget')){
+		widget.classList.toggle('minimizedWidget')
+		asyncWait(451).then(()=>{
+			gebi('minimized').appendChild(widget,true)
+			widget.style.position="initial"
+			widget.onclick=()=>{
+				widget.style.position=""
+				widget.classList.remove('minimizedWidget')
+				gebi('widgets').appendChild(widget)
+				widget.onclick=null
+			}
+		})
+	}
 }
 const close=elem=>{
 	let wd=elem.parentNode.parentNode.parentNode
-	console.log(wd)
-	gebi('widgets').removeChild(elem.parentNode.parentNode.parentNode)
+	gebi('widgets').removeChild(wd)
 }
 const showMenu=(s=true)=>{
 	console.log('showing menu: '+s)
@@ -97,3 +95,6 @@ gebi('menu').onclick=toggleMenu
 set(gebcn('red'),close)
 set(gebcn('yellow'),minimize)
 set(gebcn('green'),maximize)
+set(gebcn('menuitem'),()=>{
+	console.log('Hello')
+})
