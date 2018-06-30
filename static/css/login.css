@@ -1,0 +1,73 @@
+/*
+  Created on: Sat Jun 23 15:08:16 IST 2018
+  Author: Prakhar Srivastava
+*/
+
+body {
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	padding-top: 5em;
+	background-color: #222;
+	color: #979797;
+	font-family: 'IM Fell English SC', serif;
+	background-attachment: fixed;
+}
+.background{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	background-attachment: fixed;
+	z-index: -100;
+	background: repeating-linear-gradient(-45deg,
+	transparent,
+	transparent 20px,
+	black 20px,
+	black 40px),linear-gradient(to right,#c3b598,#4d776e);
+	margin: 0;
+	padding: 0;
+	transition: 0.45s linear;
+}
+.global-nav{
+	background: #000;
+	height: 1em;
+	padding: 1em 0 1em 0;
+	margin: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	box-shadow: 0 0 10px 5px #0000005e, 0 0 20px 3px #0000008a;
+	color: #979797;
+	font-size: larger;
+	user-select: none;
+	z-index: 100;
+}
+.logo{
+	height: 5em;
+	width: 5em;
+	border: 2px solid #fff;
+	border-radius: 100%;
+	margin: auto;
+	background-size: 120% 160%;
+	background-position: 50% 30%;
+	box-shadow: 0 0 10px 5px #0000005e, 0 0 20px 3px #0000008a;
+	filter: saturate(0%)contrast(200%);
+}
+section.main{
+	display: block;
+	padding: 0;
+	overflow-x: hidden;
+	padding: 1em;
+	text-align: center;
+	justify-content: left;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-items: flex-start;
+    align-self: center;
+	justify-self: center;
+	transition: 0.45s ease;
+}
+/*
+MEDIA QUERIES
+*/

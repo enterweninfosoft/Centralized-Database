@@ -19,3 +19,13 @@ with app.app_context():
 @app.route('/')
 def main_page():
 	return render_template('index.html')
+
+@app.route('/login')
+def login():
+	return render_template('login.html')
+
+
+@app.route('/dashboard',methods=['GET','POST'])
+def dashboard():
+	if request.method=='GET':
+		return redirect('/',code=302)

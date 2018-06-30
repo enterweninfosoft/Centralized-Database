@@ -1,0 +1,38 @@
+<!doctype HTML>
+<html lang="en-US">
+
+<head>
+	<title>Backend</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Author" content="Prakhar">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9">
+	<link href="{{ url_for('static',filename='css/login.css') }}" type="text/css" rel="stylesheet">
+	<style>
+		.logo {
+			background-image: url("{{ url_for('static',filename='logo_jw.jpg') }}");
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+</head>
+
+<body>
+	<figure class="background" id="bg"></figure>
+	<header class="global-nav" id="hdr">
+		<div class="menucontainer" id="menu">
+			<div class="menu_btncontainer" id="menubtnc">
+				<div id="menu_upper"></div>
+				<div id="menu_lower"></div>
+			</div>
+		</div>
+		<div class="usercreds" id="usr"></div>
+		<i class="fas fa-lock"></i>
+	</header>
+	<section class="main" id="widgets">
+		
+	</section>
+	<script src="{{ url_for('static',filename='js/login.js') }}"></script>
+</body>
+
+</html>
